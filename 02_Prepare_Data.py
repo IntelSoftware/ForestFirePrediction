@@ -9,7 +9,7 @@ try:
 except:
     print("folder already exist")
 
-perc = .03
+perc = .0
 print("percent to change Fire", perc)
 
 def shiftIm(fldrIn, fn, fldrOut, perc=-.04, type='png'):
@@ -35,14 +35,14 @@ import glob
 FireList = []
 NoFireList = []
 
-fldrIn = "data/output/train/Fire/"
+fldrIn = "data/rahul/train/Fire/"
 fldrOut = "data/shift/train/Fire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
     shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed train set")
-fldrIn = "data/output/val/Fire/"
+fldrIn = "data/rahul/val/Fire/"
 fldrOut = "data/shift/val/Fire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
@@ -53,14 +53,14 @@ print("completed val set")
 perc = -1 * perc
 print("percent to change NoFire", perc)
 
-fldrIn = "data/output/train/NoFire/"
+fldrIn = "data/rahul/train/NoFire/"
 fldrOut = "data/shift/train/NoFire"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
     shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed train set")
-fldrIn = "data/output/val/NoFire/"
+fldrIn = "data/rahul/val/NoFire/"
 fldrOut = "data/shift/val/NoFire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
