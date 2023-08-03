@@ -200,5 +200,5 @@ def main(
 
 if __name__ == "__main__":
     main(
-        aug_data=False, find_batch=False, find_lr_rate=False, use_wandb=True, use_ipex=False
+        aug_data=False, find_batch=False, find_lr_rate=False, use_wandb=False, use_ipex=False
     )

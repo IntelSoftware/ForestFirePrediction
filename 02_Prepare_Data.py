@@ -9,7 +9,7 @@ try:
 except:
     print("folder already exist")
 
-perc = .0
+perc = .04
 print("percent to change Fire", perc)
 
 def shiftIm(fldrIn, fn, fldrOut, perc=-.04, type='png'):
