@@ -44,7 +44,8 @@ class Trainer:
         correct = preds.eq(labels.view_as(preds)).sum().item()
         total = labels.numel()
         return loss, correct, total
-
+        
+#*************************** Exercise 2 ***************************************
     def _to_ipex(self, dtype=torch.float32):
         """convert model memory format to channels_last to IPEX format."""
         self.model.train()
@@ -52,7 +53,8 @@ class Trainer:
         self.model, self.optimizer = ipex.optimize(
             self.model, optimizer=self.optimizer, dtype=torch.float32
         )
-
+#******************************************************************************
+    
     def train(self, train_dataloader):
         """Training loop, return epoch loss and accuracy."""
         self.model.train()
@@ -106,7 +108,9 @@ class Trainer:
         if self.use_ipex:
             self._to_ipex()
         if self.use_wandb:
-            wandb.init(project="fire-finder", name="fire-finder")
+            import os
+            print(os.environ["WANDB_DIR"])
+            wandb.init(project="fire-finder", name="fire-finder", dir="./wandb_logs")
         for epoch in range(self.epochs):
             t_epoch_start = time.time()
             t_epoch_loss, t_epoch_acc = self.train(train_dataloader)
