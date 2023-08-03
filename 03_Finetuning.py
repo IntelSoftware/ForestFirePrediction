@@ -1,4 +1,5 @@
 import os
+os.environ["WANDB_DIR"] = "./wandb_logs/"
 import pathlib
 import warnings
 import random
@@ -133,7 +134,7 @@ def main(
     aug_data: bool = False,
     find_batch: bool = False,
     find_lr_rate: bool = False,
-    use_wandb: bool = False,
+    use_wandb: bool = True,
     use_ipex=True,
 ):
     """
@@ -144,6 +145,9 @@ def main(
         find_batch (bool, optional): Whether to find optimal batch size. Defaults to False.
         find_lr_rate (bool, optional): Whether to find optimal learning rate. Defaults to False.
     """
+#    import os
+#    os.environ['WANDB_EXECUTABLE'] = '~/.conda/envs/PT/bin/python' 
+
     set_seed(42)
     print(f"Train folder {TRAIN_DIR}")
     print(f"Validation folder {VALID_DIR}")
