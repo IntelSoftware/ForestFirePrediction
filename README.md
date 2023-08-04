@@ -29,3 +29,13 @@
 - Q: How will the current CA and NV fire right now would influence the relevance of your notebook? A: the MODIS dataset does not yest have information about current burn areas. However a model trained on images from surrounding areas and times woudl likely be predictive if pre-fire iamges had been fed to a well trained model
 - Q: What is the impact of forest fires, how many lives and how much money the fires cost in CA? A: this is addressed in the [01_Overview_Finetuning.ipynb](01_Overview_Finetuning.ipynb) module.
 - Q: What hardware does this workshop give us access to? A: You will be doing experiments on the Intel(r) 4th Generation Scalable Xeon processors equipped with Intel(r) Data Center GPU max series accelerators (xpu)
+
+## Notices and Disclaimers
+
+Intel technologies may require enabled hardware, software or service activation.
+
+No product or component can be absolutely secure. 
+
+Your costs and results may vary. 
+
+© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others. 
