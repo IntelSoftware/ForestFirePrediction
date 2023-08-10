@@ -9,7 +9,7 @@ try:
 except:
     print("folder already exist")
 
-perc = .04
+perc = .05
 print("percent to change Fire", perc)
 
 def colorEnhancedIm(fldrIn, fn, fldrOut, perc=-.04, type='png'):
