@@ -5,7 +5,7 @@
 - Apply Intel Extension for PyTorch to convert model and data to xpu 
 - Apply fine tuning to satellite images to predict fire fires 2 years in advance
 - Generate syntheic satellite images using Stable Diffusion
-- Optimize a 4 part Stable Diffusion pipeline using IPEX
+- Optimize a four stage Stable Diffusion pipeline using Intel(r) Extensions for PyTorch*
 
 ## Syllabus:
 
