@@ -7,6 +7,22 @@
 - Generate syntheic satellite images using Stable Diffusion
 - Optimize a four stage Stable Diffusion pipeline using Intel(r) Extensions for PyTorch*
 
+
+## To Access via Intel(R) Developer Cloud:
+
+- First follow the IDC registration and login process
+
+- [Follow the installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
+- srun --pty bash
+- conda activate PT
+- source /opt/intel/oneapi/setvars.sh
+- git clone https://github.com/IntelSoftware/ForestFirePrediction.git
+- cd ForestFirePrediction
+- jupyter-lab --ip 10.10.10.X
+- (from another terminal - set up port tunneling)
+- (ssh idcbeta -L 8888:10.10.10.06:8888)
+- Launch the README.md to navigate
+
 ## Syllabus:
 
 
