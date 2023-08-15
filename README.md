@@ -14,11 +14,11 @@
 
 - [Follow the github code installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
 - srun --pty bash
-- . labSetup.sh
-- conda activate PT
 - source /opt/intel/oneapi/setvars.sh
 - git clone https://github.com/IntelSoftware/ForestFirePrediction.git
 - cd ForestFirePrediction
+- . labSetup.sh
+- conda activate PT
 - jupyter-lab --ip 10.10.10.X
 - (from another terminal - set up port tunneling)
 - (ssh idcbeta -L 8888:10.10.10.06:8888)
