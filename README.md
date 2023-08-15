@@ -19,13 +19,12 @@
 - cd ForestFirePrediction
 - . labSetup.sh
 - conda activate PT
-- jupyter-lab --ip 10.10.10.X
+- jupyter-lab --ip 10.10.10.2X           # X is  the node number you were assigned, so double it!
 - (from another terminal - set up port tunneling)
-- (ssh idcbeta -L 8888:10.10.10.06:8888)
+- (ssh idcbeta -L 8888:10.10.10.2X:8888)  # X is  the node number you were assigned, so double it!
 - Launch the README.md to navigate
 
 ## Syllabus:
-
 
 
 | Modules | Description | Duration |
