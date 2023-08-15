@@ -3,7 +3,7 @@ import intel_extension_for_pytorch
 from tqdm import tqdm
 import numpy as np
 from tabulate import tabulate
-import wandb
+#import wandb
 
 
 class LearningRateFinder:
@@ -14,14 +14,14 @@ class LearningRateFinder:
         device,
         loss_fn=torch.nn.CrossEntropyLoss(),
         precision="fp32",
-        use_wandb=False,
+        #use_wandb=False,
     ):
         self.model = model.to(device)
         self.optimizer = optimizer
         self.device = device
         self.loss_fn = loss_fn
         self.precision = precision
-        self.use_wandb = use_wandb
+        #self.use_wandb = use_wandb
 
     def forward_pass(self, inputs, labels):
         outputs = self.model(inputs)
@@ -56,8 +56,8 @@ class LearningRateFinder:
             lr_scheduler.step()
             lrs.append(self.optimizer.param_groups[0]["lr"])
             losses.append(loss.item())
-            if self.use_wandb:
-                wandb.log({"lr": lrs[-1], "loss": losses[-1]})
+            # if self.use_wandb:
+            #     wandb.log({"lr": lrs[-1], "loss": losses[-1]})
         increase_indices = [
             i for i in range(1, len(losses)) if losses[i] - losses[i - 1] > 0
         ]
