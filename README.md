@@ -12,7 +12,7 @@
 
 - [First follow the IDC registration and login process](https://github.com/bjodom/idc)
 
-- [Follow the installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
+- [Follow the github code installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
 - srun --pty bash
 - . labSetup.sh
 - conda activate PT
