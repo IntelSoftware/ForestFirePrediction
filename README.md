@@ -29,9 +29,9 @@
 
 | Modules | Description | Duration |
 | :----- | :------ | :------ |
-|[00_LocalSetup](00_LocalSetup.ipynb) | Setup seesion on IDC | 20 minutes |
-|[01_Overview_Finetuning.ipynb](01_Overview_Finetuning.ipynb)| + Describe overview of Forest Fire Prediction Workshop<br>+ Describe background and impact of forest fires on humanity<br>+ Provide overview of the model flow<br>+ Describe the datasets used (NASA/MODIS, USDA/NAIP).<br>+ Demonstrate how to label data.| 15 min |
-|[02_Prepare_Data.ipynb](02_Prepare_Data.ipynb)| + Describe how to prepare & label data.| skip |
+|[00_Intel_Developer_Cloud_Access.ipynb](00_Intel_Developer_Cloud_Access.ipynb) | Setup seesion on IDC | 20 minutes |
+|[01_Overview_Forest_Fire_Prediction.ipynb](01_Overview_Forest_Fire_Prediction.ipynb)| + Describe overview of Forest Fire Prediction Workshop<br>+ Describe background and impact of forest fires on humanity<br>+ Provide overview of the model flow<br>+ Describe the datasets used (NASA/MODIS, USDA/NAIP).<br>+ Demonstrate how to label data.| 15 min |
+|[02_Prepare_Synthetic_Data.ipynb](02_Prepare_Synthetic_Data.ipynb)| + Describe how to prepare & label data.| skip |
 |[03_Finetuning.ipynb](03_Finetuning.ipynb)| + Describe overview of fine tuning<br>+ Describe required folder structure for training<br>+ Describe how to implement Intel(r) Extension for PyTorch (IPEX).<br>+ Apply changes to target xpu and accelerate model with IPEX.<br>+ Apply conversion of models and data to xpu optimized format.<br>+ Convert model back to CPU format for saving.<br>| 30 min |
 |[04_ScoreMatrix.ipynb](04_ScoreMatrix.ipynb)| + Describe the confusions matrix and overall suitability of model to predicting forest fires two years in advance.<br>| 10 min |
 |[05_StableDiffusionAccelerated.ipynb](05_StableDiffusionAccelerated.ipynb)| + Describe the the Stable Diffusion model and what it is used for.<br>+ Apply changes to text to generate new synthetic images derived from a handful of real images.<br>+ Compare times of IPEX accelerated xpu runs to Non Accelerated xpu runs| 30 min |
