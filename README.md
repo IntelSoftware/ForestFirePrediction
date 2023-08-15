@@ -10,10 +10,11 @@
 
 ## To Access via Intel(R) Developer Cloud:
 
-- First follow the IDC registration and login process
+- [First follow the IDC registration and login process](https://github.com/bjodom/idc)
 
 - [Follow the installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
 - srun --pty bash
+- . labSetup.sh
 - conda activate PT
 - source /opt/intel/oneapi/setvars.sh
 - git clone https://github.com/IntelSoftware/ForestFirePrediction.git
