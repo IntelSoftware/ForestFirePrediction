@@ -1,8 +1,7 @@
-wandb
 plotext
 opencv-python
 albumentations
-matplotlib
 tqdm
 tabulate
-
+diffuser
+transformers

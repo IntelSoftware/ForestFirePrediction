@@ -2,17 +2,17 @@ from PIL import Image
 import os
 
 try:
-    os.makedirs('data/shift/train/NoFire')
-    os.makedirs('data/shift/val/NoFire')
-    os.makedirs('data/shift/train/Fire')
-    os.makedirs('data/shift/val/Fire')
+    os.makedirs('data/colorEnhanced/train/NoFire')
+    os.makedirs('data/colorEnhanced/val/NoFire')
+    os.makedirs('data/colorEnhanced/train/Fire')
+    os.makedirs('data/colorEnhanced/val/Fire')
 except:
     print("folder already exist")
 
-perc = .03
+perc = .05
 print("percent to change Fire", perc)
 
-def shiftIm(fldrIn, fn, fldrOut, perc=-.04, type='png'):
+def colorEnhancedIm(fldrIn, fn, fldrOut, perc=-.04, type='png'):
     path = fldrIn + fn
     im = Image.open(path).convert('RGB')
 
@@ -35,37 +35,37 @@ import glob
 FireList = []
 NoFireList = []
 
-fldrIn = "data/output/train/Fire/"
-fldrOut = "data/shift/train/Fire/"
+fldrIn = "data/synthetic/train/Fire/"
+fldrOut = "data/colorEnhanced/train/Fire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
-    shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
+    colorEnhancedIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed train set")
-fldrIn = "data/output/val/Fire/"
-fldrOut = "data/shift/val/Fire/"
+fldrIn = "data/synthetic/val/Fire/"
+fldrOut = "data/colorEnhanced/val/Fire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
-    shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
+    colorEnhancedIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed val set")
 
 perc = -1 * perc
 print("percent to change NoFire", perc)
 
-fldrIn = "data/output/train/NoFire/"
-fldrOut = "data/shift/train/NoFire"
+fldrIn = "data/synthetic/train/NoFire/"
+fldrOut = "data/colorEnhanced/train/NoFire"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
-    shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
+    colorEnhancedIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed train set")
-fldrIn = "data/output/val/NoFire/"
-fldrOut = "data/shift/val/NoFire/"
+fldrIn = "data/synthetic/val/NoFire/"
+fldrOut = "data/colorEnhanced/val/NoFire/"
 for fire, fn in enumerate(glob.glob(fldrIn+"*.png")):
     fn_trunc = fn.split('/')[-1]
     FireList.append(fn_trunc)
-    shiftIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
+    colorEnhancedIm(fldrIn, fn_trunc, fldrOut, perc, 'png')
 print("completed val set")
 
 print("done")

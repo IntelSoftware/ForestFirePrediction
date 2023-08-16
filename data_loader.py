@@ -14,7 +14,7 @@ import cv2
 from albumentations import HorizontalFlip, VerticalFlip, RandomRotate90, Compose
 
 imagenet_stats = [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]]
-data_dir = pathlib.Path("./data/shift/")
+data_dir = pathlib.Path("./data/colorEnhanced/")
 TRAIN_DIR = data_dir / "train"
 VALID_DIR = data_dir / "val"
 

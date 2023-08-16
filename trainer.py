@@ -3,7 +3,7 @@ import intel_extension_for_pytorch as ipex
 import os
 from tqdm import tqdm
 import time
-import wandb
+#import wandb
 from config import device
 
 
@@ -18,11 +18,11 @@ class Trainer:
         epochs=10,
         precision="fp32",
         device=device,
-        use_wandb=False,
+        #use_wandb=False,
         use_ipex=False,
     ):
         self.use_ipex = use_ipex
-        self.use_wandb = use_wandb
+        #self.use_wandb = use_wandb
         self.device = device
         self.model = model.to(self.device)
         self.loss_fn = torch.nn.CrossEntropyLoss()
@@ -44,7 +44,8 @@ class Trainer:
         correct = preds.eq(labels.view_as(preds)).sum().item()
         total = labels.numel()
         return loss, correct, total
-
+        
+#*************************** Exercise 2 ***************************************
     def _to_ipex(self, dtype=torch.float32):
         """convert model memory format to channels_last to IPEX format."""
         self.model.train()
@@ -52,7 +53,8 @@ class Trainer:
         self.model, self.optimizer = ipex.optimize(
             self.model, optimizer=self.optimizer, dtype=torch.float32
         )
-
+#******************************************************************************
+    
     def train(self, train_dataloader):
         """Training loop, return epoch loss and accuracy."""
         self.model.train()
@@ -71,13 +73,13 @@ class Trainer:
             total_correct += correct
             total_samples += batch_size
             acc = total_correct / total_samples
-            if self.use_wandb:
-                wandb.log(
-                    {
-                        "Training Loss": total_loss / len(train_dataloader),
-                        "Training Acc": acc,
-                    }
-                )
+            # if self.use_wandb:
+            #     wandb.log(
+            #         {
+            #             "Training Loss": total_loss / len(train_dataloader),
+            #             "Training Acc": acc,
+            #         }
+            #     )
         return total_loss / len(train_dataloader), acc
 
     @torch.no_grad()
@@ -92,21 +94,23 @@ class Trainer:
             total_correct += correct
             total_samples += batch_size
             acc = total_correct / total_samples
-            if self.use_wandb:
-                wandb.log(
-                    {
-                        "Validation Loss": total_loss / len(valid_dataloader),
-                        "Validation Acc": acc,
-                    }
-                )
+            # if self.use_wandb:
+            #     wandb.log(
+            #         {
+            #             "Validation Loss": total_loss / len(valid_dataloader),
+            #             "Validation Acc": acc,
+            #         }
+            #     )
         self.scheduler.step(total_loss / len(valid_dataloader))
         return total_loss / len(valid_dataloader), acc
 
     def fine_tune(self, train_dataloader, valid_dataloader):
         if self.use_ipex:
             self._to_ipex()
-        if self.use_wandb:
-            wandb.init(project="fire-finder", name="fire-finder")
+        # if self.use_wandb:
+        #     import os
+        #     print(os.environ["WANDB_DIR"])
+        #     wandb.init(project="fire-finder", name="fire-finder", dir="./wandb_logs")
         for epoch in range(self.epochs):
             t_epoch_start = time.time()
             t_epoch_loss, t_epoch_acc = self.train(train_dataloader)
@@ -122,17 +126,17 @@ class Trainer:
                 f", 📈 Accuracy: {v_epoch_acc:.4f}\n"
                 f"⏱️ Time: {t_epoch_end - t_epoch_start:.4f} sec\n"
             )
-            if self.use_wandb:
-                wandb.log(
-                    {
-                        "Train Loss": t_epoch_loss,
-                        "Train Acc": t_epoch_acc,
-                        "Valid Loss": v_epoch_loss,
-                        "Valid Acc": v_epoch_acc,
-                        "Time": t_epoch_end - t_epoch_start,
-                    }
-                )
+            # if self.use_wandb:
+            #     wandb.log(
+            #         {
+            #             "Train Loss": t_epoch_loss,
+            #             "Train Acc": t_epoch_acc,
+            #             "Valid Loss": v_epoch_loss,
+            #             "Valid Acc": v_epoch_acc,
+            #             "Time": t_epoch_end - t_epoch_start,
+            #         }
+            #     )
 
-        if self.use_wandb:
-            wandb.finish()
+        # if self.use_wandb:
+        #     wandb.finish()
         return int(v_epoch_acc * 100)

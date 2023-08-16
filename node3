@@ -1,0 +1,1 @@
+srun -p pvc-shared  -w idc-beta-batch-pvc-node-03 --pty bash
