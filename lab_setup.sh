@@ -27,8 +27,7 @@ install_packages() {
 }
 
 prepare_data() {
-    echo "commented"
-    #python 02_Prepare_Data.py || error_exit "Failed to prepare data."
+    python 02_Prepare_Data.py || error_exit "Failed to prepare data."
 }
 
 download_models() {
