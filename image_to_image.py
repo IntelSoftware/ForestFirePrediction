@@ -190,7 +190,9 @@ class Img2ImgModel:
 
 if __name__ == "__main__":
     model_id = "runwayml/stable-diffusion-v1-5"
-    base_prompt = "A close image to this original satellite image with slight change in location"
+    base_prompt = (
+        "A close image to this original satellite image with slight change in location"
+    )
     fire_variations = [
         "early morning with a wild fire",
         "late afternoon",
@@ -211,18 +213,18 @@ if __name__ == "__main__":
 
     image_urls = {
         "fire": [
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/Fire/m_3912105_sw_10_h_20160713.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/Fire/m_3912113_sw_10_h_20160713.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/Fire/m_3912114_se_10_h_20160806.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/Fire/m_3912120_ne_10_h_20160713.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/Fire/m_4012355_se_10_h_20160713.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/Fire/m_3912105_sw_10_h_20160713.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/Fire/m_3912113_sw_10_h_20160713.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/Fire/m_3912114_se_10_h_20160806.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/Fire/m_3912120_ne_10_h_20160713.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/Fire/m_4012355_se_10_h_20160713.png?raw=true",
         ],
         "no_fire": [
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/NoFire/m_3912045_ne_10_h_20160712.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/NoFire/m_3912057_sw_10_h_20160711.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/NoFire/m_3912142_sw_10_h_20160711.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/NoFire/m_3912343_se_10_h_20160529.png?raw=true",
-            "https://github.com/rahulunair/ForestFirePrediction/blob/main/data/output/train/NoFire/m_4012241_se_10_h_20160712.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/NoFire/m_3912045_ne_10_h_20160712.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/NoFire/m_3912057_sw_10_h_20160711.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/NoFire/m_3912142_sw_10_h_20160711.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/NoFire/m_3912343_se_10_h_20160529.png?raw=true",
+            "https://github.com/intelsoftware/ForestFirePrediction/blob/main/data/real_USGS_NAIP/train/NoFire/m_4012241_se_10_h_20160712.png?raw=true",
         ],
     }
 
