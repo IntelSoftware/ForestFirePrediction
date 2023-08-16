@@ -5,15 +5,6 @@ error_exit() {
     exit 1
 }
 
-print_usage() {
-    echo "Usage: $0 [OPTIONS]"
-    echo "Options:"
-    echo "  --prepare_env       Set up Intel OneAPI and Conda environment with required packages."
-    echo "  --prepare_data      Execute the 02_Prepare_Data.py script."
-    echo "  --download_models   Execute the download_model.py script."
-    exit 0
-}
-
 setup_oneapi() {
     source /opt/intel/oneapi/setvars.sh --force || error_exit "Failed to set up Intel OneAPI."
 }
@@ -31,22 +22,23 @@ install_packages() {
     conda install -y -c anaconda seaborn pandas || error_exit "Failed to install Seaborn and Pandas."
     pip install torch==1.13.0a0+git6c9b55e torchvision==0.14.1a0 intel_extension_for_pytorch==1.13.120+xpu \
         -f https://developer.intel.com/ipex-whl-stable-xpu || error_exit "Failed to install PyTorch and Intel extension."
+    pip install protobuf tensorboardX || error_exit "Failed to install protobuf tensorboardX packages."
     pip install plotext opencv-python albumentations tabulate shapely diffusers transformers || error_exit "Failed to install additional packages."
 }
 
 prepare_data() {
-    python 02_Prepare_Data.py || error_exit "Failed to prepare data."
+    echo "commented"
+    #python 02_Prepare_Data.py || error_exit "Failed to prepare data."
 }
 
 download_models() {
-    python download_model.py || error_exit "Failed to download models."
+    python download_models.py || error_exit "Failed to download models."
 }
 
 main() {
-    prepare_env=false
-    prepare_data=false
-    download_models=false
-
+    prepare_env=true
+    prepare_data=true
+    download_models=true
     for arg in "$@"; do
         case $arg in
             --prepare_env) prepare_env=true ;;
@@ -55,11 +47,6 @@ main() {
             *) error_exit "Unknown argument: $arg" ;;
         esac
     done
-
-    if [ "$prepare_env" = false ] && [ "$prepare_data" = false ] && [ "$download_models" = false ]; then
-        print_usage
-    fi
-    
     if [ "$prepare_env" = true ]; then
         setup_oneapi
         create_conda_environment "PT"
@@ -75,4 +62,3 @@ main() {
 }
 
 main "$@"
-
