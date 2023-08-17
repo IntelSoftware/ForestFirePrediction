@@ -10,14 +10,17 @@
 
 ## To Access via Intel(R) Developer Cloud:
 
+#### IDC Access
 - [First follow the IDC registration and login process](https://github.com/bjodom/idc)
+
+#### Preparing Workshop environment, code, and data
 
 - [Follow the github code installation steps in this README.md](https://github.com/IntelSoftware/ForestFirePrediction)
 - srun --pty bash
 - source /opt/intel/oneapi/setvars.sh
 - git clone https://github.com/IntelSoftware/ForestFirePrediction.git
 - cd ForestFirePrediction
-- . labSetup.sh
+- . lab-setup.sh
 - conda activate PT
 - jupyter-lab --ip 10.10.10.2X           # X is  the node number you were assigned, so double it!
 - (from another terminal - set up port tunneling)
