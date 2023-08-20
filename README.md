@@ -4,8 +4,8 @@
 
 - Apply Intel Extension for PyTorch to convert model and data to xpu 
 - Apply fine tuning to satellite images to predict fire fires 2 years in advance
-- Generate syntheic satellite images using Stable Diffusion
-- Optimize a four stage Stable Diffusion pipeline using Intel(r) Extensions for PyTorch*
+- Generate synthetic satellite images using Stable Diffusion
+- Optimize a four-stage Stable Diffusion pipeline using Intel(r) Extensions for PyTorch*
 
 
 ## To Access via Intel(R) Developer Cloud:
@@ -42,11 +42,11 @@
 
 # FAQ
 
-- Q: What is the minimum acreage MODIS considers a burn area? A: Not spcified
-- Q: Define a burn area - Where a fire starts is not the same than how big the fire got.  Maybe  many small fires contribued to a burn area - What is the MODIS definition of burn area? A: Not specified
-- Q: Have you considered instead of using USDA, to feed the model with land use map, orientation map, elevation map and slope map or other sources even tabular sources? A: a multi modal approach such as this was considered but for sake of time and complexity I gave up on the effort.
-- Q: How will the current CA and NV fire right now would influence the relevance of your notebook? A: the MODIS dataset does not yest have information about current burn areas. However a model trained on images from surrounding areas and times woudl likely be predictive if pre-fire iamges had been fed to a well trained model
-- Q: What is the impact of forest fires, how many lives and how much money the fires cost in CA? A: this is addressed in the [01_Overview_Finetuning.ipynb](01_Overview_Finetuning.ipynb) module.
+- Q: What is the minimum acreage MODIS considers a burn area? A: Not specified
+- Q: Define a burn area - Where a fire starts is not the same as how big the fire got.  Maybe many small fires contributed to a burn area - What is the MODIS definition of burn area? A: Not specified
+- Q: Have you considered instead of using USDA, to feed the model with land use map, orientation map, elevation map and slope map or other sources even tabular sources? A: a multi-modal approach such as this was considered but for the sake of time and complexity I gave up on the effort.
+- Q: How will the current CA and NV fire right now would influence the relevance of your notebook? A: the MODIS dataset does not yet have information about current burn areas. However, a model trained on images from surrounding areas and times would likely be predictive if pre-fire images had been fed to a well-trained model
+- Q: What is the impact of forest fires, how many lives and how much money have the fires cost in CA? A: this is addressed in the [01_Overview_Finetuning.ipynb](01_Overview_Finetuning.ipynb) module.
 - Q: What hardware does this workshop give us access to? A: You will be doing experiments on the Intel(r) 4th Generation Scalable Xeon processors equipped with Intel(r) Data Center GPU max series accelerators (xpu)
 
 ## Notices and Disclaimers
