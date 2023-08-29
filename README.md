@@ -49,6 +49,9 @@
 - Q: What is the impact of forest fires, how many lives and how much money have the fires cost in CA? A: this is addressed in the [01_Overview_Finetuning.ipynb](01_Overview_Finetuning.ipynb) module.
 - Q: What hardware does this workshop give us access to? A: You will be doing experiments on the Intel(r) 4th Generation Scalable Xeon processors equipped with Intel(r) Data Center GPU max series accelerators (xpu)
 
+# Survey
+![Exit_Survey](assets/surveywebinar.png)
+
 ## Notices and Disclaimers
 
 Intel technologies may require enabled hardware, software or service activation.
